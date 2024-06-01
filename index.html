@@ -10,16 +10,16 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0c1c2d;
-            color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
+            color: white;
+            background: linear-gradient(to right, #6CABDD 50%, #FF0000 50%);
         }
         header {
-            background-color: #16253e;
+            background-color: rgba(0, 0, 0, 0.6);
             color: white;
             text-align: center;
             padding: 2em 0;
@@ -30,12 +30,19 @@
             font-size: 3em;
             text-transform: uppercase;
         }
+        .content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
         .countdown {
             font-size: 2em;
-            margin-top: 20px;
             display: flex;
             justify-content: center;
             gap: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 10px;
         }
         .countdown div {
             background: #1d3a63;
@@ -65,6 +72,10 @@
             object-fit: cover;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+        .trophy {
+            width: 100px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -72,22 +83,25 @@
         <h1>Bernardo Silva</h1>
     </header>
 
-    <div class="countdown" id="countdown">
-        <div>
-            <span id="days">0</span>
-            <label>Días</label>
-        </div>
-        <div>
-            <span id="hours">0</span>
-            <label>Horas</label>
-        </div>
-        <div>
-            <span id="minutes">0</span>
-            <label>Minutos</label>
-        </div>
-        <div>
-            <span id="seconds">0</span>
-            <label>Segundos</label>
+    <div class="content">
+        <img src="eurocopa.png" alt="Eurocopa Trophy" class="trophy">
+        <div class="countdown" id="countdown">
+            <div>
+                <span id="days">0</span>
+                <label>Días</label>
+            </div>
+            <div>
+                <span id="hours">0</span>
+                <label>Horas</label>
+            </div>
+            <div>
+                <span id="minutes">0</span>
+                <label>Minutos</label>
+            </div>
+            <div>
+                <span id="seconds">0</span>
+                <label>Segundos</label>
+            </div>
         </div>
     </div>
 
