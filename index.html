@@ -13,8 +13,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
             color: #333;
             background: linear-gradient(to right, #e0eafc 50%, #cfdef3 50%);
         }
@@ -28,16 +26,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        header h1 {
-            margin: 0 20px;
-            font-size: 3em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            position: sticky;
+            top: 0;
         }
         header img {
             height: 60px;
             width: auto;
+            margin: 0 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         .main-image {
             margin-top: 20px;
@@ -86,6 +87,7 @@
             justify-content: center;
             gap: 20px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
         .images img {
             width: 200px;
@@ -107,8 +109,6 @@
         <h1>Bernardo Silva</h1>
         <img src="portugal.png" alt="Escudo Portugal">
     </header>
-
-    <img src="bernardo_silva_portugal.png" alt="Bernardo Silva con Portugal" class="main-image">
 
     <div class="content">
         <img src="eurocopa.png" alt="Eurocopa Trophy" class="trophy">
@@ -137,6 +137,8 @@
         <img src="bernardo_silva_goal.jpg" alt="Golazo de Bernardo Silva">
         <img src="bernardo_silva_assist.jpg" alt="Asistencia de Bernardo Silva">
     </div>
+
+    <img src="bernardo_silva_portugal.png" alt="Bernardo Silva con Portugal" class="main-image">
 
     <script>
         function countdown() {
