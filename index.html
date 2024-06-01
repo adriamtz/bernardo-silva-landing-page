@@ -18,7 +18,7 @@
             overflow: hidden;
         }
         header {
-            background: #333;
+            background: linear-gradient(to right, #6CABDD, #E4002B);
             color: #fff;
             padding-top: 30px;
             min-height: 70px;
@@ -44,6 +44,37 @@
             background: #fff;
             border-radius: 5px;
         }
+        .bio img, .highlights img {
+            max-width: 100%;
+            height: auto;
+        }
+        .bio {
+            display: flex;
+            align-items: center;
+        }
+        .bio img {
+            margin-right: 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .stats ul, .highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+        .highlights ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .highlights li {
+            flex: 1 1 calc(33.333% - 10px);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .highlights img {
+            width: 100%;
+            border-radius: 5px;
+        }
         footer {
             text-align: center;
             padding: 20px;
@@ -57,15 +88,28 @@
     <header>
         <div class="container">
             <h1>Bernardo Silva</h1>
+            <nav>
+                <ul>
+                    <li><a href="#bio">Biografía</a></li>
+                    <li><a href="#stats">Carreras y Logros</a></li>
+                    <li><a href="#highlights">Mejores Momentos</a></li>
+                    <li><a href="#testimonials">Testimonios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#subscribe">Suscríbete</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section class="bio container">
-        <h2>Biografía</h2>
-        <p>Bernardo Silva, nacido el 10 de agosto de 1994 en Lisboa, Portugal, es un centrocampista ofensivo conocido por su creatividad, visión y habilidad para manejar el balón. Actualmente juega en el Manchester City y en la selección nacional de Portugal.</p>
+    <section id="bio" class="bio container">
+        <img src="bernardo_silva_mc.jpg" alt="Bernardo Silva en Manchester City">
+        <div>
+            <h2>Biografía</h2>
+            <p>Bernardo Silva, nacido el 10 de agosto de 1994 en Lisboa, Portugal, es un centrocampista ofensivo conocido por su creatividad, visión y habilidad para manejar el balón. Actualmente juega en el Manchester City y en la selección nacional de Portugal.</p>
+        </div>
     </section>
 
-    <section class="stats container">
+    <section id="stats" class="stats container">
         <h2>Carreras y Logros</h2>
         <ul>
             <li><strong>Benfica:</strong> Debutó profesionalmente con el Benfica en 2013.</li>
@@ -75,27 +119,27 @@
         </ul>
     </section>
 
-    <section class="highlights container">
+    <section id="highlights" class="highlights container">
         <h2>Mejores Momentos</h2>
         <ul>
-            <li><a href="#">Golazo contra el Manchester United</a></li>
-            <li><a href="#">Asistencia brillante en la final de la Carabao Cup</a></li>
-            <li><a href="#">Jugadas increíbles en la Champions League</a></li>
+            <li><img src="bernardo_silva_goal.jpg" alt="Golazo de Bernardo Silva"></li>
+            <li><img src="bernardo_silva_assist.jpg" alt="Asistencia de Bernardo Silva"></li>
+            <li><img src="bernardo_silva_champions.jpg" alt="Jugadas en la Champions League"></li>
         </ul>
     </section>
 
-    <section class="testimonials container">
+    <section id="testimonials" class="testimonials container">
         <h2>Testimonios</h2>
         <p><strong>Pep Guardiola:</strong> "Bernardo Silva es uno de los jugadores más talentosos que he tenido el placer de entrenar. Su visión y habilidad técnica son excepcionales."</p>
         <p><strong>Kevin De Bruyne:</strong> "Bernardo es un jugador increíblemente inteligente. Hace que todo sea más fácil para el resto del equipo."</p>
     </section>
 
-    <section class="contact container">
+    <section id="contact" class="contact container">
         <h2>Contacto</h2>
         <p>Para consultas y colaboraciones, envíe un correo a: contact@bernardosilvaofficial.com</p>
     </section>
 
-    <section class="subscribe container">
+    <section id="subscribe" class="subscribe container">
         <h2>Suscríbete para Más Actualizaciones</h2>
         <form>
             <label for="email">Correo Electrónico:</label>
