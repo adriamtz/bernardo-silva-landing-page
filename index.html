@@ -12,120 +12,26 @@
             padding: 0;
             background-color: #0c1c2d;
             color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
         header {
             background-color: #16253e;
             color: white;
             text-align: center;
             padding: 2em 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            width: 100%;
         }
         header h1 {
             margin: 0;
             font-size: 3em;
             text-transform: uppercase;
         }
-        nav {
-            margin-top: 10px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-        section {
-            padding: 4em 2em;
-            text-align: center;
-        }
-        .bio {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .bio img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
-        .bio p {
-            max-width: 600px;
-            line-height: 1.6;
-        }
-        .stats ul {
-            list-style: none;
-            padding: 0;
-        }
-        .stats ul li {
-            background-color: #1d3a63;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 1.1em;
-        }
-        .highlights ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            list-style: none;
-            padding: 0;
-        }
-        .highlights li {
-            flex: 1 1 calc(33.333% - 20px);
-            margin: 10px;
-        }
-        .highlights img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .testimonials p {
-            max-width: 600px;
-            margin: 20px auto;
-            font-style: italic;
-        }
-        .contact p {
-            font-size: 1.2em;
-        }
-        .subscribe form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .subscribe input[type="email"] {
-            padding: 10px;
-            margin-bottom: 10px;
-            width: 300px;
-            font-size: 1em;
-            border: none;
-            border-radius: 5px;
-        }
-        .subscribe input[type="submit"] {
-            padding: 10px 20px;
-            font-size: 1em;
-            background-color: #e4002b;
-            border: none;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #16253e;
-            color: white;
+        .countdown {
+            font-size: 2em;
             margin-top: 20px;
         }
     </style>
@@ -133,63 +39,29 @@
 <body>
     <header>
         <h1>Bernardo Silva</h1>
-        <nav>
-            <ul>
-                <li><a href="#bio">Biografía</a></li>
-                <li><a href="#stats">Carreras y Logros</a></li>
-                <li><a href="#highlights">Mejores Momentos</a></li>
-                <li><a href="#testimonials">Testimonios</a></li>
-                <li><a href="#contact">Contacto</a></li>
-                <li><a href="#subscribe">Suscríbete</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section id="bio" class="bio">
-        <img src="bernardo_silva_mc.jpg" alt="Bernardo Silva en Manchester City">
-        <p>Bernardo Silva, nacido el 10 de agosto de 1994 en Lisboa, Portugal, es un centrocampista ofensivo conocido por su creatividad, visión y habilidad para manejar el balón. Actualmente juega en el Manchester City y en la selección nacional de Portugal.</p>
-    </section>
+    <div class="countdown" id="countdown">
+        <p>Faltan <span id="days"></span> días para el primer partido de Portugal en la Eurocopa.</p>
+    </div>
 
-    <section id="stats" class="stats">
-        <h2>Carreras y Logros</h2>
-        <ul>
-            <li><strong>Benfica:</strong> Debutó profesionalmente con el Benfica en 2013.</li>
-            <li><strong>Mónaco:</strong> Se trasladó al AS Mónaco en 2014, donde ayudó al equipo a ganar la Ligue 1 en la temporada 2016-17.</li>
-            <li><strong>Manchester City:</strong> Se unió al Manchester City en 2017, donde ha ganado múltiples títulos de la Premier League, la FA Cup y la EFL Cup.</li>
-            <li><strong>Selección Nacional:</strong> Ha sido una pieza clave para Portugal, ganando la UEFA Nations League en 2019.</li>
-        </ul>
-    </section>
+    <script>
+        function countdown() {
+            const targetDate = new Date('June 14, 2024 00:00:00').getTime(); // Fecha del primer partido de Portugal en la Eurocopa
+            const now = new Date().getTime();
+            const distance = targetDate - now;
 
-    <section id="highlights" class="highlights">
-        <h2>Mejores Momentos</h2>
-        <ul>
-            <li><img src="bernardo_silva_goal.jpg" alt="Golazo de Bernardo Silva"></li>
-            <li><img src="bernardo_silva_assist.jpg" alt="Asistencia de Bernardo Silva"></li>
-            <li><img src="bernardo_silva_champions.jpg" alt="Jugadas en la Champions League"></li>
-        </ul>
-    </section>
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    <section id="testimonials" class="testimonials">
-        <h2>Testimonios</h2>
-        <p><strong>Pep Guardiola:</strong> "Bernardo Silva es uno de los jugadores más talentosos que he tenido el placer de entrenar. Su visión y habilidad técnica son excepcionales."</p>
-        <p><strong>Kevin De Bruyne:</strong> "Bernardo es un jugador increíblemente inteligente. Hace que todo sea más fácil para el resto del equipo."</p>
-    </section>
+            document.getElementById('days').innerText = days;
 
-    <section id="contact" class="contact">
-        <h2>Contacto</h2>
-        <p>Para consultas y colaboraciones, envíe un correo a: contact@bernardosilvaofficial.com</p>
-    </section>
+            if (distance < 0) {
+                document.getElementById('countdown').innerText = "¡Hoy es el primer partido de Portugal en la Eurocopa!";
+            }
+        }
 
-    <section id="subscribe" class="subscribe">
-        <h2>Suscríbete para Más Actualizaciones</h2>
-        <form>
-            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
-            <input type="submit" value="Suscribirse">
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Bernardo Silva. Todos los derechos reservados.</p>
-    </footer>
+        countdown();
+        setInterval(countdown, 1000);
+    </script>
 </body>
 </html>
